@@ -41,9 +41,9 @@ Do tego wykorzystałem podstawowe elementy elektroniczne, takie jak rezystory, k
 
 ## 3. Jak działa podlewaczka?
 
-Po uruchomieniu urządzenie rozpoczyna skanowanie pozycji doniczek. Serwomechanizm obraca mechanizm rozprowadzania wody, a czujnik optyczny wykrywa kolejne pozycje.
+Po uruchomieniu urządzenie rozpoczyna skanowanie pozycji doniczek. Ze względu na to, że użyłem serwomechanizmu 360° z ciągłą pracą, musiałem wykorzystać czujnik optyczny, który wykrywając szczelinę w platformie wskazuje miejsce w którym serwomechanizm ma się zatrzymać.
 
-Po wykryciu doniczki mechanizm zatrzymuje się i wykonywany jest pomiar wilgotności gleby.
+Po wykryciu mechanizm zatrzymuje się i wykonywany jest pomiar wilgotności gleby.
 
 Odczyt odbywa się przez przetwornik ADS1115, który komunikuje się z ESP32-C6 za pomocą magistrali I2C. Otrzymana wartość jest przeliczana na procent wilgotności na podstawie wcześniej wykonanej kalibracji.
 
@@ -55,7 +55,7 @@ Po sprawdzeniu wszystkich czterech doniczek system przechodzi w tryb Deep Sleep,
 
 Do obsługi wykorzystałem pilota na podczerwień oraz wyświetlacz LCD 16×2.
 
-Pilot umożliwia uruchamianie i zatrzymywanie pracy, przechodzenie do ustawień oraz zmianę wybranych parametrów.
+Pilot umożliwia uruchamianie i zatrzymywanie pracy, przechodzenie do ustawień oraz zmianę czasu uśpienia.
 
 Ustawienia zapisywane są w pamięci nieulotnej ESP32-C6 za pomocą biblioteki `Preferences`, dzięki czemu nie trzeba konfigurować ich od nowa po restarcie urządzenia.
 
@@ -69,7 +69,7 @@ W programie wykorzystałem następujące stany:
 
 | Stan | Działanie |
 |---|---|
-| `RUCH` | Obracanie mechanizmu i wykrywanie doniczek |
+| `RUCH` | Obracanie mechanizmu|
 | `WILGOTNOSC` | Odczyt wilgotności gleby |
 | `PODLEWANIE` | Uruchomienie pompki |
 | `SLEEP` | Uśpienie mikrokontrolera |
@@ -99,7 +99,6 @@ W trakcie budowy pojawiły się problemy, których początkowo nie brałem w pe�
 
 Musiałem więc odpowiednio dopasować konstrukcję oraz sposób sterowania.
 
-Nie uważam, że serwomechanizm jest najlepszym możliwym rozwiązaniem dla tego urządzenia, ale jego wykorzystanie pozwoliło mi sprawdzić w praktyce kilka zagadnień, które wcześniej znałem głównie z teorii.
 
 ## 6. Elektronika i zasilanie
 
@@ -116,37 +115,7 @@ W układzie znajdują się także kondensatory filtrujące, których zastosowani
 - [Plik KiCad](hardware/podlewaczka_schemat.kicad_sch)
 - [Schemat w PDF](hardware/podlewaczka_schemat.pdf)
 
-## 7. Problemy napotkane podczas budowy
-
-Podczas pracy nad podlewaczką nie wszystko działało od razu. Sporo czasu zajęło mi testowanie poszczególnych elementów i szukanie przyczyn nieprawidłowego działania.
-
-### Zakłócenia od pompki
-
-Podczas uruchamiania pompki pojawiały się zakłócenia wpływające na pracę innych elementów, między innymi LCD i serwomechanizmu.
-
-Testowałem różne sposoby prowadzenia zasilania oraz zastosowanie kondensatorów filtrujących.
-
-### Problemy z mechanizmem obrotowym
-
-W trakcie obrotu platformy przewody potrafiły ograniczać jej ruch. Dodatkowo obciążenie mechanizmu wpływało na pracę serwomechanizmu.
-
-Wymagało to modyfikacji konstrukcji oraz ograniczenia zakresu obrotu.
-
-### Odczyty czujników wilgotności
-
-Czujniki wymagały kalibracji, ponieważ same wartości odczytywane przez ADC nie informują bezpośrednio o procentowej wilgotności gleby.
-
-Wykonałem pomiary dla suchego i mokrego podłoża, a następnie wykorzystałem te wartości do przeliczania wyników.
-
-### Deep Sleep i wybudzanie
-
-Kolejnym wyzwaniem była obsługa trybu Deep Sleep. Podczas testowania pojawiały się problemy związane z wybudzaniem urządzenia oraz komunikacją przez USB.
-
-### Odbiornik podczerwieni
-
-Zdarzało się również, że podczas pracy serwomechanizmu odbiornik IR rejestrował nieprawidłowe kody. Wymagało to sprawdzenia, jak zakłócenia i sposób obsługi pilota wpływają na działanie programu.
-
-## 8. Konstrukcja mechaniczna
+## 7. Konstrukcja mechaniczna
 
 Elementy mechaniczne zaprojektowałem z myślą o wykonaniu ich na drukarce 3D.
 
@@ -154,10 +123,10 @@ Głównym elementem jest obrotowa platforma, na której umieszczony został mech
 
 Podczas projektowania musiałem uwzględnić miejsce na przewody, sposób mocowania serwomechanizmu i rurki doprowadzającej wodę oraz obciążenie całej konstrukcji.
 
-Modele 3D i pliki do druku będą umieszczone w folderze `mechanical`.
+Modele 3D i pliki do druku są umieszczone w folderze `mechanical`.
 
 
-## 9. Struktura repozytorium
+## 8. Struktura repozytorium
 
     Automatyczna-Podlewaczka-ESP32-C6/
     │
@@ -174,15 +143,18 @@ Modele 3D i pliki do druku będą umieszczone w folderze `mechanical`.
     │
     └── README.md
 
-## 11. O projekcie
+## 9. O projekcie
 
-Podlewaczka jest moim indywidualnym projektem, który stopniowo rozwijam i poprawiam.
+Podlewaczka jest moim indywidualnym projektem.
 
 Zależało mi na zbudowaniu czegoś, co faktycznie może mieć zastosowanie w domu, a jednocześnie pozwoli mi poeksperymentować z elektroniką i programowaniem mikrokontrolerów.
 
-Nie wszystkie zastosowane rozwiązania są optymalne i część z nich z pewnością można wykonać lepiej. Projekt traktuję jednak również jako okazję do sprawdzania własnych pomysłów, popełniania błędów i wyciągania z nich wniosków.
-
 ---
+%%10 Prezentacja działania
+
+Poniższy film przedstawia działanie prototypu podczas automatycznego cyklu podlewania roślin.
+
+🎥 **[Prezentacja działania](TUTAJ_WKLEJ_LINK_DO_FILMU)**
 
 **Autor:** Michał Dolczewski  
 **Rok:** 2026
