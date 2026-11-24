@@ -150,7 +150,7 @@ Podlewaczka jest moim indywidualnym projektem.
 Zależało mi na zbudowaniu czegoś, co faktycznie może mieć zastosowanie w domu, a jednocześnie pozwoli mi poeksperymentować z elektroniką i programowaniem mikrokontrolerów.
 
 ---
-%%10 Prezentacja działania
+##10 Prezentacja działania
 
 Poniższy film przedstawia działanie prototypu podczas automatycznego cyklu podlewania roślin.
 
