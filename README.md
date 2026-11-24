@@ -154,7 +154,7 @@ Zależało mi na zbudowaniu czegoś, co faktycznie może mieć zastosowanie w do
 
 Poniższy film przedstawia działanie prototypu podczas automatycznego cyklu podlewania roślin.
 
-🎥 **[Prezentacja działania](TUTAJ_WKLEJ_LINK_DO_FILMU)**
+🎥 **[Prezentacja działania](https://www.youtube.com/watch?v=-FItSWhTrL0)**
 
 **Autor:** Michał Dolczewski  
 **Rok:** 2026
