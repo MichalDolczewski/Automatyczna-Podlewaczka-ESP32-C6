@@ -85,7 +85,7 @@ Wykorzystane biblioteki:
 - `Preferences` – zapisywanie ustawień w pamięci nieulotnej.
 - `esp_sleep` – obsługa trybu Deep Sleep.
 
-Kod znajduje się w folderze [`firmware`](firmware/).
+Kod znajduje się w folderze [`firmware`](/firmware).
 
 ## 5. Dlaczego wykorzystałem serwomechanizm?
 
@@ -126,31 +126,14 @@ Podczas projektowania musiałem uwzględnić miejsce na przewody, sposób mocowa
 Modele 3D i pliki do druku są umieszczone w folderze `mechanical`.
 
 
-## 8. Struktura repozytorium
-
-    Automatyczna-Podlewaczka-ESP32-C6/
-    │
-    ├── firmware/
-    │   └── podlewaczka.ino
-    │
-    ├── hardware/
-    │   ├── podlewaczka_schemat.kicad_sch
-    │   └── podlewaczka_schemat.pdf
-    │
-    ├── mechanical/
-    │
-    ├── images/
-    │
-    └── README.md
-
-## 9. O projekcie
+## 8. O projekcie
 
 Podlewaczka jest moim indywidualnym projektem.
 
 Zależało mi na zbudowaniu czegoś, co faktycznie może mieć zastosowanie w domu, a jednocześnie pozwoli mi poeksperymentować z elektroniką i programowaniem mikrokontrolerów.
 
 ---
-## 10 Prezentacja działania
+## 9 Prezentacja działania
 
 Poniższy film przedstawia działanie prototypu podczas automatycznego cyklu podlewania roślin.
 
