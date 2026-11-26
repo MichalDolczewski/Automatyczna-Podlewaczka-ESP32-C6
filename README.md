@@ -112,8 +112,8 @@ W układzie znajdują się także kondensatory filtrujące, których zastosowani
 
 ### Schemat elektryczny
 
-- [Plik KiCad](hardware/podlewaczka_schemat.kicad_sch)
-- [Schemat w PDF](hardware/podlewaczka_schemat.pdf)
+- [Plik KiCad](/hardware/podlewaczka_schemat.kicad_sch)
+- [Schemat w PDF](/hardware/podlewaczka_schemat.pdf)
 
 ## 7. Konstrukcja mechaniczna
 
