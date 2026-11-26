@@ -112,8 +112,8 @@ W układzie znajdują się także kondensatory filtrujące, których zastosowani
 
 ### Schemat elektryczny
 
-- [Plik KiCad](/hardware/podlewaczka_schemat.kicad_sch)
-- [Schemat w PDF](/hardware/podlewaczka_schemat.pdf)
+- [Plik KiCad](/hardware/Automatyczna_podlewaczka_roslin_ESP32_C6.kicad_sch)
+- [Schemat w PDF](/hardware/Automatyczna_podlewaczka_roslin_ESP32_C6.kicad.pdf)
 
 ## 7. Konstrukcja mechaniczna
 
